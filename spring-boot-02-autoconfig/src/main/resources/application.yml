@@ -1,0 +1,8 @@
+amazon:
+  associate_id: habuma-20
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+
