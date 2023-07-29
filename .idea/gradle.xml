@@ -20,6 +20,14 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-boot-03-security" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/spring-boot-03-security" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
