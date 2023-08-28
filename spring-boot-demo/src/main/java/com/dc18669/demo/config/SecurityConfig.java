@@ -1,6 +1,7 @@
 package com.dc18669.demo.config;
 
 
+import com.dc18669.demo.service.impl.LoginServiceImplUserDetailsService;
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +13,8 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
@@ -22,6 +25,12 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        System.out.println(new BCryptPasswordEncoder().encode("123456"));
+        return new BCryptPasswordEncoder();
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -71,33 +80,34 @@ public class SecurityConfig {
     // }
 
 
-    @Bean
-    public DataSource dataSource() {
-        ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        //设置数据库连接参数
-        dataSource.setDriverClass("com.mysql.jdbc.Driver");
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
-        dataSource.setUser("root");
-        dataSource.setPassword("root");
-        return dataSource;
-    }
+    // @Bean
+    // public DataSource dataSource() {
+    //     ComboPooledDataSource dataSource = new ComboPooledDataSource();
+    //     //设置数据库连接参数
+    //     dataSource.setDriverClass("com.mysql.jdbc.Driver");
+    //     dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+    //     dataSource.setUser("root");
+    //     dataSource.setPassword("root");
+    //     return dataSource;
+    // }
+    //
+    // @Bean
+    // UserDetailsManager users(DataSource dataSource) {
+    //     UserDetails user = User.builder()
+    //             .username("user")
+    //             .password("{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW")
+    //             .roles("USER")
+    //             .build();
+    //     UserDetails admin = User.builder()
+    //             .username("admin")
+    //             .password("{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW")
+    //             .roles("USER", "ADMIN")
+    //             .build();
+    //     JdbcUserDetailsManager users = new JdbcUserDetailsManager(dataSource);
+    //     users.createUser(user);
+    //     users.createUser(admin);
+    //     return users;
+    // }
 
-    @Bean
-    UserDetailsManager users(DataSource dataSource) {
-        UserDetails user = User.builder()
-                .username("user")
-                .password("{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW")
-                .roles("USER")
-                .build();
-        UserDetails admin = User.builder()
-                .username("admin")
-                .password("{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW")
-                .roles("USER", "ADMIN")
-                .build();
-        JdbcUserDetailsManager users = new JdbcUserDetailsManager(dataSource);
-        users.createUser(user);
-        users.createUser(admin);
-        return users;
-    }
 
 }
