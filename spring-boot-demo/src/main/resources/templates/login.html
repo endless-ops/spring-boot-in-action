@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+</head>
+<body>
+<div class="l-h">
+    <div class="l-l-d">
+        <div class="ll-l-f">
+            <form action="/tea/login" method="post">
+                <div class="ll-l-f-e">
+                    <p><span th:unless="${err == null}" th:text="${err}"></span></p>
+                </div>
+                <div class="ll-l-f-u-d">
+                    <label for="ll-l-f-u-i">
+                        <input id="ll-l-f-u-i" class="ll-l-f-u-i" type="text" name="name" placeholder="用户名"/>
+                    </label>
+                </div>
+
+                <div class="ll-l-f-u-d">
+                    <label for="ll-l-f-u-p">
+                        <input id="ll-l-f-u-p" class="ll-l-f-u-i ll-l-f-u-p" type="password" name="password" placeholder="密码"/>
+                    </label>
+                </div>
+
+                <div class="ll-l-f-u-d">
+                    <label for="ll-l-f-u-s">
+                        <input id="ll-l-f-u-s" class="ll-l-f-u-s" type="submit" value="登录"/>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

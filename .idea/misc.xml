@@ -5,8 +5,25 @@
     <file type="web" url="file://$PROJECT_DIR$/spring-boot-01-reading-list" />
     <file type="web" url="file://$PROJECT_DIR$/spring-boot-02-autoconfig" />
     <file type="web" url="file://$PROJECT_DIR$/spring-boot-03-security" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-boot-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-boot-security" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-boot-security-2.0" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" project-jdk-name="17" project-jdk-type="JavaSDK">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/spring-security/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-security-2.0/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-security-6.1.2/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/spring-boot-security-2.0/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

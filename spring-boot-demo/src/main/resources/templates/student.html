@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生列表</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/student.css}"/>
+</head>
+<body>
+<!-- 添加学生信息 -->
+<h6>添加学生信息</h6>
+<hr/>
+<div class="a-s">
+    <p><span th:text="${empty}"></span></p>
+    <form action="/students/add_student" method="post">
+        <table>
+            <tr>
+                <td><label for="f-a-s-na">学生姓名:<input id="f-a-s-na" type="text" name="name" class="f-a-s-n"/></label></td>
+                <td><label for="f-a-s-se">学生性别:<input id="f-a-s-se" type="radio" name="sex" value="男" class="f-a-s-s"/>男
+                    <input type="radio" name="sex" value="女" class="f-a-s-s"/>女</label></td>
+                <td><label for="f-a-s-ag">学生年龄:<input id="f-a-s-ag" type="text" name="age" class="f-a-s-a"/></label></td>
+                <td><label for><input type="submit" value="提交" class="f-a-s-m"/></label></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div class="s-s-s">
+    <form action="/students/find_student_name" method="get">
+        <label><input type="text" name="name" placeholder="输入查询内容" class="s-s-s-t"/><input class="s-s-s-s"
+                                                                                                 type="submit"
+                                                                                                 value="搜索"/></label>
+    </form>
+</div>
+<h6>学生信息列表</h6>
+<hr/>
+<div class="s-s">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>学生姓名</th>
+            <th>学生性别</th>
+            <th>学生年龄</th>
+        </tr>
+
+        <tr th:unless="${#lists.isEmpty(students)}" th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.sex}"></td>
+            <td th:text="${student.age}"></td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(students)}">
+            <td th:text="${no_result}" class="no-result" th:colspan="${4}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

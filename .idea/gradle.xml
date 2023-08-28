@@ -4,27 +4,26 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-boot-01-reading-list" />
-        <option name="gradleJvm" value="17" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-boot-demo" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/spring-boot-01-reading-list" />
+            <option value="$PROJECT_DIR$/spring-boot-demo" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-boot-02-autoconfig" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-boot-security" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/spring-boot-02-autoconfig" />
+            <option value="$PROJECT_DIR$/spring-boot-security" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-boot-03-security" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-security-2.0" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/spring-boot-03-security" />
+            <option value="$PROJECT_DIR$/spring-security-2.0" />
           </set>
         </option>
       </GradleProjectSettings>
