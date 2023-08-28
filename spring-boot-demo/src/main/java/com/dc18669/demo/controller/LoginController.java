@@ -19,11 +19,11 @@ public class LoginController {
     }
 
     @RequestMapping("/login")
-    public String login(String name, String password, Model model) {
+    public String login(String username, String password, Model model) {
         System.out.println("进入 login 操作，，，，，，>>>");
 
-        Teacher teacher = this.loginService.login(name, password);
-        if (name.equals(teacher.getName())) {
+        Teacher teacher = this.loginService.login(username, password);
+        if (username.equals(teacher.getName())) {
             return "redirect:/students/find_student";
         }
         model.addAttribute("err", teacher.getName());
